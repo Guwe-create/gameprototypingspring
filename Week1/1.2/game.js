@@ -19,7 +19,7 @@ function animate()
 
 	context.clearRect(0,0,canvas.width, canvas.height);	
 	
-
+	ball.x = ball.x + 1;
 	
 	ball.drawCircle();
 }
