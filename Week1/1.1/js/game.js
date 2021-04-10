@@ -4,26 +4,23 @@ var canvas;
 var context;
 var timer;
 
-var interval = 1000/60;
-var player;
+var mainTimer = setInterval(animate, 1000/60);
+var ball;
 
 	
 	canvas = document.getElementById("canvas");
 	context = canvas.getContext("2d");	
 	
 	
-	player = new GameObject();
-
-	
-	timer = setInterval(animate, interval);
+	ball = new GameObject();
 
 function animate()
 {
 
 	context.clearRect(0,0,canvas.width, canvas.height);	
 	
+	ball.x = ball.x + 1;
 	
-	
-	player.drawCircle();
+	ball.drawCircle();
 }
 
