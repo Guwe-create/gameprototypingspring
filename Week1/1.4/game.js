@@ -9,6 +9,8 @@ var ball;
 var speed;
 speed = 1;
 
+var up;
+up = 1;
 
 	canvas = document.getElementById("canvas");
 	context = canvas.getContext("2d");	
@@ -25,15 +27,29 @@ function animate()
 	context.clearRect(0,0,canvas.width, canvas.height);	
 	
 	
-	
+	if (up == 1)
+	{
+		ball.y = ball.y + 1;
+	}
+	if (ball.y == 800)
+	{
+		up = 2;
+	}
 	if (speed == 1)
 	{
 		ball.x = ball.x + 1;
 	}
+	if (up == 2)
+	{
+		ball.y = ball.y - 1;
+	}
+	if (ball.y == 0)
+	{
+		up = 1;
+	}
 	if (ball.x == 980)
 	{
 		speed = 2;
-		ball.vy -= ball.vy;
 	}
 	if (speed == 2)
 	{
