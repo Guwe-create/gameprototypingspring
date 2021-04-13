@@ -30,13 +30,17 @@ function animate()
 	{
 		ball.x = ball.x + 1;
 	}
-	if (ball.x == 1020)
+	if (ball.x == 980)
 	{
 		speed = 2;
 	}
 	if (speed == 2)
 	{
 		ball.x = ball.x - 1;
+	}
+	if (ball.x == 15)
+	{
+		speed = 1;
 	}
 
 		
