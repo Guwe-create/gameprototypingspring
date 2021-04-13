@@ -39,7 +39,7 @@ function animate()
 	{
 		ball.x = ball.x - 1;
 	}
-	if (ball.x == 15)
+	if (ball.x == 30)
 	{
 		speed = 1;
 	}

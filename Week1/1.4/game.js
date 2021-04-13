@@ -31,7 +31,7 @@ function animate()
 	{
 		ball.y = ball.y + 1;
 	}
-	if (ball.y == 800)
+	if (ball.y == 760)
 	{
 		up = 2;
 	}
@@ -43,7 +43,7 @@ function animate()
 	{
 		ball.y = ball.y - 1;
 	}
-	if (ball.y == 0)
+	if (ball.y == 30)
 	{
 		up = 1;
 	}
@@ -55,7 +55,7 @@ function animate()
 	{
 		ball.x = ball.x - 1;
 	}
-	if (ball.x == 15)
+	if (ball.x == 30)
 	{
 		speed = 1;
 	}
