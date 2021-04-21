@@ -1,8 +1,6 @@
 //Define Booleans for each key
 var a = false;
 var d = false;
-var w = false;
-var s = false;
 
 //Add Event Listeners
 document.addEventListener("keydown", press);
@@ -53,30 +51,4 @@ function release(e)
 	{
 		s = false;
 	}
-}
-
-
-
-this.move = function()
-{
-	this.x += this.vx;
-	this.y += this.vy;
-}
-
-this.left = function() 
-{
-	return this.x - this.width/2;
-}
-this.right = function() 
-{
-	return this.x + this.width/2;
-}
-
-this.top = function() 
-{
-	return this.y - this.height/2;
-}
-this.bottom = function() 
-{
-	return this.y + this.height/2;
 }
