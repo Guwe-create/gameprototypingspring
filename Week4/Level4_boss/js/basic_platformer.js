@@ -24,18 +24,20 @@ var bullet;
 
 	enemy = new GameObject({x:800, y:canvas.height/2-100});
 
-	bullet = new GameObject();
-	bullet.x = player.x;
-	bullet.width = 10;
-	bullet.height = 10;
-	bullet.y = 10000;
-	bullet.color = "yellow";
+
 	
 	gun = new GameObject();
 	gun.width = 10;
 	gun.x = 200;
 	gun.y = 600;
 	gun.color = "blue";
+
+	bullet = new GameObject();
+	bullet.x = gun.x;
+	bullet.width = 10;
+	bullet.height = 10;
+	bullet.y = 10000;
+	bullet.color = "yellow";
 
 	var fX = .85;
 	var fY = .97;
@@ -66,16 +68,20 @@ function animate()
 		player.vx += player.ax * player.force;
 	}
 
+
+
 	if(ammo == 1)
 	{
 		if(g)
 		{
-			bullet.y = player.y;
+			bullet.y = gun.y;
+			
 			bullet.x = bullet.x + 5;
 			
 		}
 		if(g == false)
 		{
+			bullet.y = bullet.y;
 			if(bullet.x == 700)
 			{
 				bullet.y = 10000;
@@ -156,7 +162,7 @@ function animate()
 	
 	enemy.vy = player.vy;
 //Made a gun in the game that can hurt an enemy
-
+context.font = "16px Arial";
 	
 if(enemy.hitTestObject(player))
 {
@@ -164,13 +170,17 @@ if(enemy.hitTestObject(player))
 }
 if(player.hitTestObject(gun))
 {
-	gun.y = 10000;
+	gun.y = player.y;
+	gun.x = player.x;
 	ammo = 1;
+	context.fillText("Press G!", 80, 25);
 }
 if(bullet.hitTestObject(enemy))
 {
 	enemy.y = 1000;
 }
+
+
 	
 	
 	
