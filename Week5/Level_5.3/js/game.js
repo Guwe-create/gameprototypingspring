@@ -20,14 +20,14 @@ var amount = 12;
 	//Create an array called "particles" to store the particles
 var particles = [];
 	//Create a for loop that loops the number of times specified by the "amount" variable
-	for (i = 0; i < amount.length; i++) {
-		
-		particles[i] = amount;
-		particles = new GameObject();
-		amount++;
+	for (i = 0; i < amount; i++)
+	 {
+		particles[i] = new GameObject();
+	
 
-		particles[i].x = Math.floor(Math.random() * (0 - canvas.width)) + 0;
-		particles[i].y = Math.floor(Math.random() * (0 - canvas.height)) + 0;
+		particles[i].x = Math.floor(Math.random() * (canvas.width)) + 0;
+		particles[i].y = Math.floor(Math.random() * (canvas.height)) + 0;
+		console.log(particles[i].x)
 	  }
 		//Within the for loop do the following: 
 		//	1.Instantiate new GameObject and store it in each index of the particles array
@@ -53,9 +53,10 @@ function animate()
 	//--------------------------------------Step 2: Draw Particles---------------------------------------------------------
 	//DrawRect()for each particle using a for loop.
 	//The for loop should use the particles.length for its limit
-	
 	for (i = 0; i < particles.length; i++) {
-		particles.drawRect();
+		
+		particles[i].drawRect();
+		
 	  }
 	//----------------------------------------------------------------------------------------------------------------------
 }
